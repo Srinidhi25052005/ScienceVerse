@@ -4,21 +4,22 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const authRoutes = require('./routes/authRoutes');
+const storyRoutes = require('./routes/storyRoutes');
+const progressRoutes = require('./routes/progressRoutes');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/stories', storyRoutes);
+app.use('/api/progress', progressRoutes);
 
-// Test route
 app.get('/', (req, res) => {
   res.json({ message: 'ScienceVerse API is running!' });
 });
 
-// MongoDB - uncomment at college
 // mongoose.connect(process.env.MONGO_URI)
 //   .then(() => console.log('MongoDB Connected!'))
 //   .catch(err => console.log('DB Error:', err.message));
