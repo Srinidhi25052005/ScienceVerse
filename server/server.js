@@ -6,6 +6,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/authRoutes');
 const storyRoutes = require('./routes/storyRoutes');
 const progressRoutes = require('./routes/progressRoutes');
+const rewardRoutes = require('./routes/rewardRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/progress', progressRoutes);
+app.use('/api/rewards', rewardRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'ScienceVerse API is running!' });
