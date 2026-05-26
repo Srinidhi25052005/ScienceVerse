@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const storyRoutes = require('./routes/storyRoutes');
 const progressRoutes = require('./routes/progressRoutes');
 const rewardRoutes = require('./routes/rewardRoutes');
+const quizRoutes = require('./routes/quizRoutes');
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/progress', progressRoutes);
 app.use('/api/rewards', rewardRoutes);
+app.use('/api/quiz', quizRoutes);
 
 app.get('/', (req, res) => {
   res.json({ message: 'ScienceVerse API is running!' });
